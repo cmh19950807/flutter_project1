@@ -14,6 +14,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool showTitle = true;
 
+  void ToggleTitle() {
+    setState(() {
+      showTitle = !showTitle;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,13 +30,16 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
       ),
-      home: const Scaffold(
-        backgroundColor: Color(0xFFF4EDDB),
+      home: Scaffold(
+        backgroundColor: const Color(0xFFF4EDDB),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              MyLargeTitle(),
+              showTitle ? const MyLargeTitle() : const Text('noting'),
+              IconButton(
+                  onPressed: ToggleTitle,
+                  icon: const Icon(Icons.remove_red_eye))
             ],
           ),
         ),
@@ -51,7 +60,6 @@ class MyLargeTitle extends StatefulWidget {
 class _MyLargeTitleState extends State<MyLargeTitle> {
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     print("dispose!");
   }
