@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -8,6 +10,28 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int totalSeconds = 25 * 60;
+  bool isRunnung = false;
+  late Timer timer;
+
+  void onTick(Timer timer) {
+    setState(() {
+      totalSeconds = totalSeconds - 1;
+    });
+  }
+
+  void onStartPressed() {
+    setState(() {
+      isRunnung = !isRunnung;
+    });
+    isRunnung
+        ? timer = Timer.periodic(
+            const Duration(seconds: 1),
+            onTick,
+          )
+        : timer.cancel();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
               alignment: Alignment.bottomCenter,
               child: Text(
-                '25:00',
+                '$totalSeconds',
                 style: TextStyle(
                     color: Theme.of(context).cardColor,
                     fontSize: 89,
@@ -34,8 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: IconButton(
                   color: Theme.of(context).cardColor,
                   iconSize: 98,
-                  onPressed: () {},
-                  icon: const Icon(Icons.play_circle_outline),
+                  onPressed: onStartPressed,
+                  icon: Icon(isRunnung
+                      ? Icons.pause_circle_outline_outlined
+                      : Icons.play_circle_outline),
                 ),
               )),
           Flexible(
@@ -44,8 +70,12 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Expanded(
                   child: Container(
-                    decoration:
-                        BoxDecoration(color: Theme.of(context).cardColor),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).cardColor,
+                      borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(50),
+                          topRight: Radius.circular(50)),
+                    ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
