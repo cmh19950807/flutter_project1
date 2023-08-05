@@ -1,72 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  bool showTitle = true;
-
-  void ToggleTitle() {
-    setState(() {
-      showTitle = !showTitle;
-    });
-  }
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        textTheme: const TextTheme(
-          titleLarge: TextStyle(
-            color: Colors.red,
-          ),
-        ),
-      ),
-      home: Scaffold(
-        backgroundColor: const Color(0xFFF4EDDB),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              showTitle ? const MyLargeTitle() : const Text('noting'),
-              IconButton(
-                  onPressed: ToggleTitle,
-                  icon: const Icon(Icons.remove_red_eye))
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class MyLargeTitle extends StatefulWidget {
-  const MyLargeTitle({
-    super.key,
-  });
-
-  @override
-  State<MyLargeTitle> createState() => _MyLargeTitleState();
-}
-
-class _MyLargeTitleState extends State<MyLargeTitle> {
-  @override
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      'My Large Title',
-      style: TextStyle(
-        fontSize: 30,
-        color: Theme.of(context).textTheme.titleLarge?.color,
-      ),
-    );
+        theme: ThemeData(
+            // ignore: deprecated_member_use
+            backgroundColor: const Color(0xFFE7626C),
+            textTheme: const TextTheme(
+                // ignore: deprecated_member_use
+                headline1: TextStyle(
+              color: Color(0xFF232B55),
+            )),
+            cardColor: const Color(0xFFF4EDDB)),
+        home: const HomeScreen());
   }
 }
