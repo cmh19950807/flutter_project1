@@ -1,0 +1,42 @@
+D:\Code\Flutter_projerct\fp1\flutter_application_1\lib
+
+Flutter setting 
+확장 
+flutter 
+dart 
+error lens
+
+
+setting.json
+"editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+"dart.previewFlutterUiGuides": true,
+"editor.formatOnSave": true,
+    "editor.formatOnType": true,
+
+_________________________________________________________
+window setting ref_
+
+{
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "editor.tabSize": 2,
+    "workbench.iconTheme": "material-icon-theme",
+    "vscode-edge-devtools.webhint": false,
+    "editor.fontFamily": "d2coding",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "dart.previewFlutterUiGuides": true,
+    "window.zoomLevel": 1,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "enableTelemetry": false,
+    "workbench.startupEditor": "none",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+}
