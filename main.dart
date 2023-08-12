@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fp1/screens/home_screen.dart';
+
 //import 'package:flutter_application_1/screens/home_screen.dart';
 
 void main() {
@@ -12,15 +12,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
-            // ignore: deprecated_member_use
-            backgroundColor: const Color(0xFFE7626C),
-            textTheme: const TextTheme(
-                // ignore: deprecated_member_use
-                headline1: TextStyle(
-              color: Color(0xFF232B55),
-            )),
-            cardColor: const Color(0xFFF4EDDB)),
-        home: const HomeScreen());
+      home: Container(),
+    );
   }
 }
