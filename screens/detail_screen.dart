@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:fp1/models/webtoon_detail_model.dart';
-import 'package:fp1/models/webtoon_episode_model.dart';
-import 'package:fp1/services/api_services.dart';
+
+//win
+import 'package:flutter_application_1/models/webtoon_detail_model.dart';
+import 'package:flutter_application_1/models/webtoon_episode_model.dart';
+import 'package:flutter_application_1/services/api_services.dart';
+
+//mac
+//import 'package:fp1/models/webtoon_detail_model.dart';
+//import 'package:fp1/models/webtoon_episode_model.dart';
+//import 'package:fp1/services/api_services.dart';
 
 class DetailScreen extends StatefulWidget {
   final String title, thumb, id;
@@ -14,6 +21,7 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   late Future<WebtoonDetailModel> webtoon;
+
   late Future<List<WebtoonEpisdoeModel>> episodes;
   @override
   void initState() {
@@ -67,6 +75,15 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
             ],
           ),
+          FutureBuilder(
+            future: webtoon,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(snapshot.data!.about);
+              }
+              return const Text('...');
+            },
+          )
         ],
       ),
     );
