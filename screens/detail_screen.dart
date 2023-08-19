@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 //win
-import 'package:flutter_application_1/models/webtoon_detail_model.dart';
-import 'package:flutter_application_1/models/webtoon_episode_model.dart';
-import 'package:flutter_application_1/services/api_services.dart';
-import 'package:flutter_application_1/widgets/episdoe_widget.dart';
+// import 'package:flutter_application_1/models/webtoon_detail_model.dart';
+// import 'package:flutter_application_1/models/webtoon_episode_model.dart';
+// import 'package:flutter_application_1/services/api_services.dart';
+// import 'package:flutter_application_1/widgets/episdoe_widget.dart';
+import 'package:fp1/models/webtoon_detail_model.dart';
+import 'package:fp1/models/webtoon_episode_model.dart';
+import 'package:fp1/services/api_services.dart';
+import 'package:fp1/widgets/episdoe_widget.dart';
 
 //mac
 //import 'package:fp1/models/webtoon_detail_model.dart';
