@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_application_1/models/webtoon_model.dart';
 // import 'package:flutter_application_1/services/api_services.dart';
 // import 'package:flutter_application_1/widgets/webtoon_widget.dart';
-import 'package:fp1/models/webtoon_model.dart';
-import 'package:fp1/services/api_services.dart';
-import 'package:fp1/widgets/webtoon_widget.dart';
+import 'package:flutter_application_1/models/webtoon_model.dart';
+import 'package:flutter_application_1/services/api_services.dart';
+import 'package:flutter_application_1/widgets/webtoon_widget.dart';
 //mac
 //import 'package:fp1/models/webtoon_model.dart';
 //import 'package:fp1/services/api_services.dart';

@@ -5,9 +5,9 @@ import 'dart:convert';
 // import 'package:flutter_application_1/models/webtoon_episode_model.dart';
 // import 'package:flutter_application_1/models/webtoon_model.dart';
 
-import 'package:fp1/models/webtoon_detail_model.dart';
-import 'package:fp1/models/webtoon_episode_model.dart';
-import 'package:fp1/models/webtoon_model.dart';
+import 'package:flutter_application_1/models/webtoon_detail_model.dart';
+import 'package:flutter_application_1/models/webtoon_episode_model.dart';
+import 'package:flutter_application_1/models/webtoon_model.dart';
 import 'package:http/http.dart' as http;
 
 //mac

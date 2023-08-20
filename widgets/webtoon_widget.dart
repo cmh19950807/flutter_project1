@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 //import 'package:flutter_application_1/screens/detail_screen.dart';
 
 //mac
-import 'package:fp1/screens/detail_screen.dart';
+import 'package:flutter_application_1/screens/detail_screen.dart';
 
 class Webtoon extends StatelessWidget {
   final String title, thumb, id;

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_application_1/models/webtoon_episode_model.dart';
 // import 'package:url_launcher/url_launcher_string.dart';
 
-import 'package:fp1/models/webtoon_episode_model.dart';
+import 'package:flutter_application_1/models/webtoon_episode_model.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class Episode extends StatelessWidget {
