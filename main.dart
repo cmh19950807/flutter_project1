@@ -11,6 +11,7 @@ import 'package:flutter_application_1/screens/home_screens.dart';
 // install list
 // flutter pub add url_launcher
 // flutter pub add http
+// flutter pub add shared_preferences
 
 //url_launcher 경로에 붙여 넣기 필요
 // https://pub.dev/packages/url_launcher
