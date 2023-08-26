@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+//image 경로에 사진 1,2 추가 후
+// pubspec.yaml 아래 코드 추가
+
+// assets:
+//     - image/1.jpeg
+//     - image/2.jpeg
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -8,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Charactor',
       home: Grade(),
     );
@@ -28,22 +36,33 @@ class Grade extends StatelessWidget {
         backgroundColor: Colors.amber[700],
         elevation: 0.0,
       ),
-      body: const Padding(
-        padding: EdgeInsets.fromLTRB(30, 40, 0, 0),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('image/1.jpeg'),
+                radius: 50,
+              ),
+            ),
+            Divider(
+              height: 55,
+              color: Colors.amber[100],
+              thickness: 1,
+            ),
+            const Text(
               'NAME',
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 0.8),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               'BBANTO',
               style: TextStyle(
                   fontSize: 30,
@@ -51,10 +70,10 @@ class Grade extends StatelessWidget {
                   letterSpacing: 1.2,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Row(
+            const Row(
               children: [
                 Text(
                   'BBANTO POWER LEVEL',
@@ -77,10 +96,10 @@ class Grade extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Row(
+            const Row(
               children: [
                 Icon(
                   Icons.check_circle_outline,
@@ -96,10 +115,10 @@ class Grade extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Row(
+            const Row(
               children: [
                 Icon(
                   Icons.check_circle_outline,
@@ -115,10 +134,10 @@ class Grade extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Row(
+            const Row(
               children: [
                 Icon(
                   Icons.check_circle_outline,
@@ -133,6 +152,16 @@ class Grade extends StatelessWidget {
                       color: Colors.white, fontWeight: FontWeight.w500),
                 ),
               ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('image/2.jpeg'),
+                backgroundColor: Colors.amber,
+                radius: 70,
+              ),
             ),
           ],
         ),
