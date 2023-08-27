@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 //image 경로에 사진 1,2 추가 후
 // pubspec.yaml 아래 코드 추가
@@ -30,32 +29,83 @@ class MyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      initialRoute: "A",
+      routes: {
+        "A": (context) => const ScreenA(),
+        "B": (context) => const ScreenB(),
+        "C": (context) => const ScreenC()
+      },
+    );
+  }
+}
+
+class ScreenA extends StatelessWidget {
+  const ScreenA({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Toast message'),
-        backgroundColor: Colors.blue[400],
+        title: const Text("A page"),
       ),
       body: Center(
-        child: TextButton(
-          onPressed: () {
-            flutterToast();
-          },
-          style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.blue[100])),
-          child: const Text(
-            'Toast',
-            style: TextStyle(color: Colors.white),
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "B");
+                },
+                child: const Text('Go to B Page')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "C");
+                },
+                child: const Text('Go to C Page')),
+          ],
         ),
       ),
     );
   }
 }
 
-void flutterToast() {
-  Fluttertoast.showToast(
-      msg: 'Flutter',
-      gravity: ToastGravity.BOTTOM,
-      backgroundColor: Colors.redAccent,
-      toastLength: Toast.LENGTH_SHORT);
+class ScreenB extends StatelessWidget {
+  const ScreenB({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Second page"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text('Go to First Page')),
+      ),
+    );
+  }
+}
+
+class ScreenC extends StatelessWidget {
+  const ScreenC({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Second page"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text('Go to First Page')),
+      ),
+    );
+  }
 }
