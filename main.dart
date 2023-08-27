@@ -53,16 +53,35 @@ class ScreenA extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
+            TextButton.icon(
                 onPressed: () {
-                  Navigator.pushNamed(context, "B");
+                  print('a');
                 },
-                child: const Text('Go to B Page')),
+                icon: const Icon(Icons.home),
+                label: const Text('data'))
+            // TextButton.icon(
+            //     onPressed: () {
+            //       Navigator.pushNamed(context, "B");
+            //     },
+            //     child: const Text('Go to B Page')),
+            ,
             ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, "C");
                 },
                 child: const Text('Go to C Page')),
+            ButtonBar(
+              alignment: MainAxisAlignment.end,
+              buttonPadding: const EdgeInsets.all(30),
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: const Text('Textbutton'),
+                ),
+                ElevatedButton(
+                    onPressed: () {}, child: const Text('ElevatedButton'))
+              ],
+            )
           ],
         ),
       ),
