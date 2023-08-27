@@ -73,6 +73,51 @@ class MyPage extends StatelessWidget {
                     bottomLeft: Radius.circular(40),
                     bottomRight: Radius.circular(40),
                   )),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.home,
+                color: Colors.grey[850],
+              ),
+              title: const Text('HOME'),
+              onTap: () {
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('data'));
+              },
+              trailing: const Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.home,
+                color: Colors.grey[850],
+              ),
+              title: const Text('HOME'),
+              onTap: () {
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('data'));
+              },
+              trailing: const Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.home,
+                color: Colors.grey[850],
+              ),
+              title: const Text('HOME'),
+              onTap: () {
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('data'));
+              },
+              trailing: const Icon(Icons.add),
             )
           ],
         ),
