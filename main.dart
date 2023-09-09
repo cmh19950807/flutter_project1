@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/OnBoarding.dart';
 
 //image 경로에 사진 1,2 추가 후
 // pubspec.yaml 아래 코드 추가
@@ -7,123 +8,57 @@ import 'package:flutter/material.dart';
 //     - image/1.jpeg
 //     - image/2.jpeg
 // flutter pub add fluttertoast
+//flutter pub add introduction_screen
 
-void main() => runApp(const MyApp());
+// - image/ 파일 아래 모든 파일 inport
+// - image/child.png
+// - image/coffee.png
+// - image/home.png
+// - image/milk.png
+
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Appbar',
-      theme: ThemeData(primarySwatch: Colors.red),
-      home: const MyPage(),
+      home: OnBoardingPage(),
     );
   }
 }
 
-class MyPage extends StatelessWidget {
-  const MyPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: "A",
-      routes: {
-        "A": (context) => const ScreenA(),
-        "B": (context) => const ScreenB(),
-        "C": (context) => const ScreenC()
-      },
-    );
-  }
-}
-
-class ScreenA extends StatelessWidget {
-  const ScreenA({super.key});
+//OnBoardingPage
+class Mypage extends StatelessWidget {
+  const Mypage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("A page"),
+        title: const Text('Main Page'),
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextButton.icon(
-                onPressed: () {
-                  print('a');
-                },
-                icon: const Icon(Icons.home),
-                label: const Text('data'))
-            // TextButton.icon(
-            //     onPressed: () {
-            //       Navigator.pushNamed(context, "B");
-            //     },
-            //     child: const Text('Go to B Page')),
-            ,
+            const Text(
+              'Main Page',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+            ),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, "C");
-                },
-                child: const Text('Go to C Page')),
-            ButtonBar(
-              alignment: MainAxisAlignment.end,
-              buttonPadding: const EdgeInsets.all(30),
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: const Text('Textbutton'),
-                ),
-                ElevatedButton(
-                    onPressed: () {}, child: const Text('ElevatedButton'))
-              ],
+              onPressed: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => const OnBoardingPage(),
+                ));
+              },
+              child: const Text('Go to onBoarding Screen'),
             )
           ],
         ),
-      ),
-    );
-  }
-}
-
-class ScreenB extends StatelessWidget {
-  const ScreenB({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Second page"),
-      ),
-      body: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('Go to First Page')),
-      ),
-    );
-  }
-}
-
-class ScreenC extends StatelessWidget {
-  const ScreenC({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Second page"),
-      ),
-      body: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('Go to First Page')),
       ),
     );
   }
