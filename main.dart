@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/myPage.dart';
 
 //image 경로에 사진 1,2 추가 후
 // pubspec.yaml 아래 코드 추가
@@ -24,46 +25,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyPage(),
-    );
-  }
-}
-
-class MyPage extends StatefulWidget {
-  const MyPage({super.key});
-
-  @override
-  State<MyPage> createState() => _MyPageState();
-}
-
-class _MyPageState extends State<MyPage> {
-  static List<String> animalName = {   
-    'Bear',
-    'Deer',
-    'Tiger',
-    'Lion'
-  };};
-  static List<String> animalImage = {
-    'mage/child.png',
-    'image/coffee.png',
-    'image/home.png',
-    'image/milk.png,
-  };
-  static List<String> animalName = {
-    'a',
-    'b',
-    'c',
-    'd'
-  };
-  
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('ListView'),
-      ),
-      body: ListView.builder(itemBuilder: itemBuilder),
+    return MaterialApp(
+      theme: ThemeData(
+          primarySwatch: Colors.deepPurple,
+          textTheme: const TextTheme(
+              // ignore: deprecated_member_use
+              bodyText2: TextStyle(
+            fontSize: 30,
+            color: Colors.white,
+          ))),
+      home: const MyPage(),
     );
   }
 }
