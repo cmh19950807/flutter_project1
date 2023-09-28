@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/myPage.dart';
 
 //image 경로에 사진 1,2 추가 후
 // pubspec.yaml 아래 코드 추가
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
             fontSize: 30,
             color: Colors.white,
           ))),
-      home: const MyPage(),
+      home: Container(),
     );
   }
 }
